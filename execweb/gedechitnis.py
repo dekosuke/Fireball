@@ -9,5 +9,9 @@ app = Flask(__name__)
 def index():
   return 'Fire Ball'
 
+def execProblem(lang, inputs, outputs):
+  pass
+  #foreach problem, run exec and if all pass ok
+
 if __name__ == '__main__':
   app.run()
