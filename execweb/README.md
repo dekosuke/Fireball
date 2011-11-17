@@ -1,1 +1,2 @@
-exec server
+gedechitnis exec server, to exec program
+
