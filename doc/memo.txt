@@ -1,0 +1,34 @@
+概要：
+
+・あなごる的なコンテストサーバを作る
+・ユーザ情報はアダプタ任せ
+
+
+テーブル定義：
+
+注：ユーザ定義周りはどうしよう
+
+問題テーブル
+Problem
+id - primary id(問題ID)
+title - タイトル
+description - 説明文
+
+テストケーステーブル
+id - primary id(テストID)
+problem_id - 問題id
+input - インプット
+output - アウトプット
+
+ユーザテーブル
+id - primary id(ユーザID)
+name - ユーザ名
+
+回答テーブル
+id - primary id(回答ID)
+code - ソースコード
+user_id - 提出ユーザID
+language - 言語
+result - 結果(正解,コンパイルエラー、タイムアウト、etc..)
+
+
