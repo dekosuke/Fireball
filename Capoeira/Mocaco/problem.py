@@ -1,6 +1,9 @@
 # -*- coding:utf-8 -*-
 
 class Problems(object):
+  class ProblemOverlap(Exception):
+    pass
+
   class Problem(object):
     def __init__(self, **kwargs):
       if set(['alias', 'title', 'description']) != set(kwargs.keys()):
@@ -30,8 +33,9 @@ class Problems(object):
 
   def __iadd__(self, other):
     p = Problems.Problem(**other)
-    if p in self.problem:
-      raise OverflowError('problem overflow')
+    for e in self.problem:
+      if e.title == p.title:
+        raise Problems.ProblemOverlap('problem overlap')
 
     self.problem.append(Problems.Problem(**other))
     return self

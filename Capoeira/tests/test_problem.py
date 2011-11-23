@@ -65,5 +65,17 @@ class TestProglem(unittest.TestCase):
     self.assertEqual(t.title, v.title)
     self.assertEqual(t.description, v.description)
 
+  def testOverlap(self):
+    p = Problems()
+    problems= {
+      'alias': u'fizzbuzz',
+      'title': u'フィズバズ',
+      'description': u'おなじみの問題ですね'}
+
+    p += problems
+
+    with self.assertRaises(Problems.ProblemOverlap):
+      p += problems
+
 if __name__ == '__main__':
   unittest.main()
