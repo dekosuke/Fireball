@@ -34,7 +34,7 @@ class Problems(object):
   def __iadd__(self, other):
     p = Problems.Problem(**other)
     for e in self.problem:
-      if e.title == p.title:
+      if e.alias == p.alias:
         raise Problems.ProblemOverlap('problem overlap')
 
     self.problem.append(Problems.Problem(**other))
