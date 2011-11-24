@@ -74,7 +74,7 @@ class TestProglem(unittest.TestCase):
 
     p += problems
 
-    with self.assertRaises(Problems.ProblemOverlap):
+    with self.assertRaises(Problems.OverlapError):
       p += problems
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 class Problems(object):
-  class ProblemOverlap(Exception):
+  class OverlapError(Exception):
     pass
 
   class Problem(object):
@@ -35,7 +35,7 @@ class Problems(object):
     p = Problems.Problem(**other)
     for e in self.problem:
       if e.alias == p.alias:
-        raise Problems.ProblemOverlap('problem overlap')
+        raise Problems.OverlapError('problem overlap')
 
     self.problem.append(Problems.Problem(**other))
     return self
