@@ -7,7 +7,7 @@ class Problems(object):
   class Problem(object):
     def __init__(self, **kwargs):
       if set(['alias', 'title', 'description']) != set(kwargs.keys()):
-        raise KeyError('"title" and "description" is must.')
+        raise KeyError('"alias", "title" and "description" is must.')
 
       self.alias = kwargs.get('alias')
       self.title = kwargs.get('title')
