@@ -4,3 +4,5 @@
 class Language(object):
   def __init__(self):
     pass
+  def get_exec_args(self):
+    return self.execargs
