@@ -18,7 +18,6 @@ class ExecEngine(object):
     exec_args = lang.get_exec_args()
     #exec program. we refered usage of subprocess
     #http://docs.python.org/library/subprocess.html#subprocess-replacements
-    print exec_args
     p = subp.Popen(exec_args, stdin=subp.PIPE, stdout=subp.PIPE)
     output = p.communicate(input=source)[0]
     return output
