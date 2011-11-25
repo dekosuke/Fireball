@@ -22,8 +22,4 @@ class ExecEngine(object):
     output = p.communicate(input=source)[0]
     return output
 
-#here is example and soon deleted
-if True:
-  e = ExecEngine()
-  r =e.execCode("print 'test'", "python")
-  print "result is:\n"+r
+
