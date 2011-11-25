@@ -26,7 +26,7 @@ class Problems(object):
     return len(self.problem)
 
   def __getitem__(self, index):
-    if index > len(self.problem):
+    if index > len(self):
       raise IndexError('index abounds')
     else:
       return self.problem[index]

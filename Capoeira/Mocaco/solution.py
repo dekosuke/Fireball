@@ -25,7 +25,7 @@ class Solutions(object):
     return len(self.solution)
 
   def __getitem__(self, index):
-    if index > len(self.solution):
+    if index > len(self):
       raise IndexError('index abounds')
     else:
       return self.solution[index]

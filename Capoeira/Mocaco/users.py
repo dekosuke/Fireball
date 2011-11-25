@@ -23,7 +23,7 @@ class Users(object):
     return len(Users.user)
 
   def __getitem__(self, index):
-    if index > len(Users.user):
+    if index > len(self):
       raise IndexError('index abounds')
     else:
       return Users.user[index]
