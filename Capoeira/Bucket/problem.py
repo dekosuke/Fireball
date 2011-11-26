@@ -5,9 +5,15 @@ class Problems(object):
     pass
 
   class Problem(object):
+    KEYS = ['alias', 'title', 'description']
+
     def __init__(self, **kwargs):
-      if set(['alias', 'title', 'description']) != set(kwargs.keys()):
-        raise KeyError('"title" and "description" is must.')
+      keys = Problems.Problem.KEYS
+      if set(keys) != set(kwargs.keys()):
+        raise KeyError('{xs} and {x} is must.'.format(
+                xs=','.join(keys[:-1]),
+                x=keys[-1]
+              ))
 
       self.alias = kwargs.get('alias')
       self.title = kwargs.get('title')
@@ -20,7 +26,7 @@ class Problems(object):
     return len(self.problem)
 
   def __getitem__(self, index):
-    if index > len(self.problem):
+    if index > len(self):
       raise IndexError('index abounds')
     else:
       return self.problem[index]
@@ -37,6 +43,6 @@ class Problems(object):
       if e.alias == p.alias:
         raise Problems.OverlapError('problem overlap')
 
-    self.problem.append(Problems.Problem(**other))
+    self.problem.append(p)
     return self
 
