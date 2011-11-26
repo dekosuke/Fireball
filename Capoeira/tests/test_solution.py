@@ -8,7 +8,7 @@ if not '../' in sys.path:
 
 import unittest
 
-from Mocaco.solution import Solutions
+from Bucket.solution import Solutions
 
 class TestSolution(unittest.TestCase):
   def setUp(self):
