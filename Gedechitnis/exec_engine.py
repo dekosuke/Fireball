@@ -7,14 +7,14 @@ import sys
 if not '../' in sys.path:
   sys.path.insert(0, op.abspath(op.join(op.dirname(__file__), '../')))
 
-import Capoeira.Language.language as l
+import Capoeira.Language.base as l
 import subprocess as subp
 
 class ExecEngine(object):
   def __init__(self):
     pass
   def execCode(self, source, langname):
-    lang = l.LangFactory().get_language(langname)
+    lang = l.LangFactory().get(langname)
     exec_args = lang.get_exec_args()
     #exec program. we refered usage of subprocess
     #http://docs.python.org/library/subprocess.html#subprocess-replacements
