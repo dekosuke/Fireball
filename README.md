@@ -1,6 +1,19 @@
 FireBall
 ==========
 
+
+Drossel
+----------
+
+Drossel is front server.
+
+
+Gedechitnis
+----------
+
+Gedechitnis is exec server.
+
+
 Capoeira
 ----------
 
