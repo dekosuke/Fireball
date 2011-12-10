@@ -15,7 +15,8 @@ class ExecEngine(object):
     pass
   def execCode(self, source, langname):
     lang = l.LangFactory().get(langname)
-    exec_args = lang.get_exec_args()
+    exec_args = ["timeout", "3"] + lang.get_exec_args()
+    #print exec_args
     #exec program. we refered usage of subprocess
     #http://docs.python.org/library/subprocess.html#subprocess-replacements
     p = subp.Popen(exec_args, stdin=subp.PIPE, stdout=subp.PIPE)
