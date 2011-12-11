@@ -4,7 +4,7 @@
 #exec-web api
 
 from flask import Flask
-from flask import request
+from flask import request,jsonify
 
 import exec_engine as e
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route("/exec", methods=['GET','POST'])
 def index():
-  if request.method == 'GET':
+  if request.method in ['GET','POST']:
   #if request.method == 'POST' or True:
     #return str(request.form.keys())
     src = request.args.get('src')
@@ -20,7 +20,7 @@ def index():
     engine = e.ExecEngine()
     #return str((src,lang))
     output = engine.execCode(src, lang)
-    return output
+    return jsonify(stdout=output)
   else:
     return 'error-request not post'
 
