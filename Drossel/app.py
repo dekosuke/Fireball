@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-from bottle import route, run
+from bottle import route, template, static_file, debug, run
 
-@route("/")
+DEBUG = True
+RELOAD = True
+
+@route('/')
 def index():
-  return "index"
-  #return render_template('index.html')
+  return template('index')
+
+@route('/static/<path:path>')
+def static(path):
+  return static_file(path, 'static')
 
 if __name__ == '__main__':
-  run()
+  debug(DEBUG)
+  run(host='localhost', port=8080, reloader=RELOAD)
