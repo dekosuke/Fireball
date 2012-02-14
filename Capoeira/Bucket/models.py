@@ -14,7 +14,7 @@ class Problem(Base):
 
   def __init__(self, title, description):
     self.title = title
-    self.description
+    self.description = description
 
 class TestCase(Base):
   __tablename__ = 'testcases'
